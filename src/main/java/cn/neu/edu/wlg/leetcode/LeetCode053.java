@@ -15,7 +15,7 @@ package cn.neu.edu.wlg.leetcode;
             f(2) = -2 = max(f(1) A2 + A2)
 
  */
-public class LeetCode53 {
+public class LeetCode053 {
 
     public int maxSubArray(int[] nums) {
 //        if (null == nums || 0 == nums.length) {
