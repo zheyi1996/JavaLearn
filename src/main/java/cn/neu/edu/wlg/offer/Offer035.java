@@ -13,23 +13,25 @@ package cn.neu.edu.wlg.offer;
                   5 6 & 0 7 +1
                   0 5 6 7 + 2
 
+        5 6
+        0 7
  */
 public class Offer035 {
 
-    private int nums = 0;
+    private int count = 0;
 
     public static void main(String[] args) {
         Offer035 offer035 = new Offer035();
         int [] array = {1,2,3,4,5,6,7,0};
-        int result = offer035.InversePairs(array);
-        System.out.println(result);
+        System.out.println(offer035.InversePairs(array));
     }
     public int InversePairs(int [] array) {
         if (null == array || 0 == array.length) {
             return 0;
         }
         mergeSort(array, 0, array.length - 1);
-        return nums;
+//        System.out.println(count);
+        return count;
     }
     private void mergeSort(int [] array, int low, int high) {
         int mid = (low + high) / 2;
@@ -50,10 +52,11 @@ public class Offer035 {
         // 把较小的数移动到新数组中
         while (i <= mid && j <= high) {
             if (arr[i] < arr[j]) {
-                temp[k++] = arr[i++];
-            } else {
-                ++nums;
                 temp[k++] = arr[j++];
+            } else {
+                ++count;
+                count %= 1000000007;
+                temp[k++] = arr[i++];
             }
         }
         // 把左边剩余的数移动到新数组
@@ -65,7 +68,7 @@ public class Offer035 {
             temp[k++] = arr[j++];
         }
         // 使用有序的新数组覆盖原数组
-        for (int h = 0; h <= temp.length; ++h) {
+        for (int h = 0; h < temp.length; ++h) {
             arr[h + low] = temp[h];
         }
     }

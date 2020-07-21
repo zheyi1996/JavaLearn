@@ -4,7 +4,14 @@ package cn.neu.edu.wlg.sortalgorithm;
     归并排序：先分割再合并，把排序问题转化为两个有序数列的排序问题
  */
 public class MergeSort {
-
+    public static void main(String[] args) {
+        MergeSort mergeSort = new MergeSort();
+        int [] array = {1,2,3,4,5,6,7,0};
+        int [] arr = mergeSort.sort(array, 0, array.length - 1);
+        for (int i : arr) {
+            System.out.println(i);
+        }
+    }
     public int[] sort(int[] arr, int low, int high) {
         int mid = (low + high) / 2;
         if (low < high) {
@@ -39,7 +46,7 @@ public class MergeSort {
             temp[k++] = arr[j++];
         }
         // 使用有序的新数组覆盖原数组
-        for (int h = 0; h <= temp.length; ++h) {
+        for (int h = 0; h < temp.length; ++h) {
             arr[h+low] = temp[h];
         }
     }
