@@ -2,6 +2,14 @@ package cn.neu.edu.wlg.sortalgorithm;
 
 /*
     归并排序：先分割再合并，把排序问题转化为两个有序数列的排序问题
+    算法步骤：
+        1. 求数组中间位置 mid
+        2. 将数组拆分为左右两个子数组
+        3. 归并左右子数组(两个有序数列排序)
+            3.1 创建辅助数组temp，长度为 high - low + 1
+            3.2 将两个有序子数组顺序对比大小，将较小(或较大)的存放到辅助数组中
+            3.3 将两数组中剩余的数存放到数组中
+            3.4 使该有序数组覆盖原数组的相应部分
  */
 public class MergeSort {
     public static void main(String[] args) {
