@@ -3,6 +3,9 @@ package cn.neu.edu.wlg.offer;
 import cn.neu.edu.wlg.offer.util.DNode;
 import cn.neu.edu.wlg.offer.util.ListNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
     题目：链表中环的入口结点
     思路： 需要问清楚一个结点是不是环
@@ -19,29 +22,57 @@ import cn.neu.edu.wlg.offer.util.ListNode;
  */
 public class Offer055 {
 
-    // 思路一
-//    public ListNode EntryNodeOfLoop(ListNode pHead) {
-//        if (null == pHead || null == pHead.next) { // 先认为一个结点不能成环
-//            return pHead;
-//        }
-//        DNode dNodeHead = new DNode(-1);
-//        ListNode temp1 = pHead;
-//        DNode temp2 = dNodeHead;
-//        while (null != temp1) {
-//            DNode dNode = new DNode(temp1.val);
-//            temp2.next = dNode;
-//            temp1 = temp1.next;
-//        }
-//        temp2 = dNodeHead.next;
-//        int k = 0;
-//        while (null != dNodeHead && null != temp2) {
-//            if (null == temp2.prev) {
-//                ++k;
-//                temp2.prev = dNodeHead;
-//            } else {
-//
-//            }
-//        }
-//        return null;
-//    }
+    // 思路二
+    public ListNode EntryNodeOfLoop(ListNode pHead) {
+        if (null == pHead || null == pHead.next) { // 一个结点不能成环
+            return null;
+        }
+        ListNode oneStepList = pHead;
+        ListNode twoStepList = pHead.next.next;
+        int loopLength = 0;
+        // 证明是否成环
+        while (null != twoStepList) {
+            if (oneStepList.equals(twoStepList)) { // 成环，计算环的长度
+                ListNode temp = oneStepList.next;
+                ++loopLength;
+                while (temp != oneStepList) { // 计算环的长度
+                    ++loopLength;
+                    temp = temp.next;
+                }
+                // 求倒数第K个结点
+                temp = pHead;
+                ListNode result = pHead;
+                for (int i = 1; i <= loopLength; ++i) {
+                    temp = temp.next;
+                }
+                while (temp != result) { // 倒数第K个结点!!!
+                    temp = temp.next;
+                    result = result.next;
+                }
+                return result;
+            } else {
+                oneStepList = oneStepList.next;
+                twoStepList = twoStepList.next.next;
+            }
+        }
+        return null; // 不成环
+    }
+
+    // 思路三
+    public ListNode EntryNodeOfLoop3(ListNode pHead) {
+        if (null == pHead || null == pHead.next) { // 一个结点不能成环
+            return null;
+        }
+        ListNode temp = pHead;
+        Set<ListNode> listNodeSet = new HashSet<>();
+        while (null != temp) {
+            if (listNodeSet.contains(temp)) {
+                return temp;
+            } else {
+                listNodeSet.add(temp);
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
 }
