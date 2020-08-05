@@ -3,6 +3,7 @@ package cn.neu.edu.wlg.offer;
 import cn.neu.edu.wlg.offer.util.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,11 +29,9 @@ public class Offer059 {
                 ArrayList<Integer> arrayList  = (ArrayList<Integer>) result.clone();
                 if (0 == oddEven) {
                     oddEven = 1;
-                    arrayList = (ArrayList<Integer>) result.clone();
+//                    arrayList = (ArrayList<Integer>) result.clone();
                 } else {
-                    for (i = result.size() - 1; i >= 0; ++i) {
-//                        arrayList.add();
-                    }
+                    Collections.reverse(arrayList);
                     oddEven = 0;
                 }
                 results.add(arrayList);
@@ -46,8 +45,12 @@ public class Offer059 {
                 queue.add(temp.right);
             }
         }
+
         if (!result.isEmpty()) {
             ArrayList<Integer> arrayList = (ArrayList<Integer>) result.clone();
+            if (1 == oddEven) {
+                Collections.reverse(arrayList);
+            }
             results.add(arrayList);
         }
         return results;
