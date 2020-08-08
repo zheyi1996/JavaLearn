@@ -1,4 +1,4 @@
-package cn.neu.edu.wlg.sortalgorithm;
+package cn.neu.edu.wlg.algorithm.sortalgorithm;
 
 /*
     归并排序：先分割再合并，把排序问题转化为两个有序数列的排序问题

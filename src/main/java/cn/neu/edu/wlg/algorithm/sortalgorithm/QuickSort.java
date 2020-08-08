@@ -1,4 +1,4 @@
-package cn.neu.edu.wlg.sortalgorithm;
+package cn.neu.edu.wlg.algorithm.sortalgorithm;
 
 /*
     快速排序：
