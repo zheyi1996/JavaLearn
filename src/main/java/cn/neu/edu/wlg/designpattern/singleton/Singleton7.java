@@ -1,6 +1,6 @@
 //https://www.cnblogs.com/zhaoyan001/p/6365064.html
 
-package cn.neu.edu.wlg.base.singleton;
+package cn.neu.edu.wlg.designpattern.singleton;
 
 //@wlg 静态内部类 -- 静态内部类方式在Singleton类被装载时并不会立即实例化
 public class Singleton7 {

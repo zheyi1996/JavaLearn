@@ -1,6 +1,6 @@
 //https://www.cnblogs.com/zhaoyan001/p/6365064.html
 
-package cn.neu.edu.wlg.base.singleton;
+package cn.neu.edu.wlg.designpattern.singleton;
 
 //@wlg 饿汉式(静态代码块)
 public class Singleton2 {

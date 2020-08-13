@@ -1,6 +1,6 @@
 //https://www.cnblogs.com/zhaoyan001/p/6365064.html
 
-package cn.neu.edu.wlg.base.singleton;
+package cn.neu.edu.wlg.designpattern.singleton;
 
 //@wlg 双重检查
 public class Singleton6 { //@wlg 双重检查的意义在哪里?

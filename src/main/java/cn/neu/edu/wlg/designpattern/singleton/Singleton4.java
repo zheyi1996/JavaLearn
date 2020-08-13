@@ -1,6 +1,6 @@
 //https://www.cnblogs.com/zhaoyan001/p/6365064.html
 
-package cn.neu.edu.wlg.base.singleton;
+package cn.neu.edu.wlg.designpattern.singleton;
 
 //@wlg 懒汉式(线程安全,同步方法)
 public class Singleton4 {
