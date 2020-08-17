@@ -7,6 +7,19 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+    题目：按之字形顺序打印二叉树
+    思路：
+        在按层(每层都是从左到右)打印二叉树的基础之上加上一个奇偶判断
+        按层打印二叉树思路：
+            1. 进行二叉树的层次遍历
+            2. 对于每一个取出的节点都计算该节点的深度，同一深度的节点的值保存到同一个ArrayList中
+                计算二叉树的深度
+
+    知识点：
+        1.Collections.reverse(arrayList); 可以反转ArrayList中的元素
+ */
+
 public class Offer059 {
 
     public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {

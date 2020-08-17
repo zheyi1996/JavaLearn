@@ -10,11 +10,11 @@ public class Offer030 {
     public int FindGreatestSumOfSubArray(int[] array) {
         Integer [] f = new Integer[array.length];
         f[0] = array[0];
-        int max = f[0];
+        int result = f[0];
         for (int i =1; i < array.length; ++i) {
             f[i] = Math.max(array[i] + f[i - 1], array[i]);
-            max = max > f[i] ? max : f[i];
+            result = result > f[i] ? result : f[i];
         }
-        return max;
+        return result;
     }
 }

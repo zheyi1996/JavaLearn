@@ -11,9 +11,13 @@ import java.util.Queue;
     思路：先遍历二叉树得到二叉树各个结点的深度，然后使用宽度优先搜素遍历二叉树并输出各行
     步骤：
         1. 遍历二叉树得到各结点的深度，记录到一个队列中
-        2. 宽度优先遍历二叉树，,每到一个结点都将队列中的数弹出并判断二叉树结点的行
+        2. 宽度优先遍历二叉树,每到一个结点都将队列中的数弹出并判断二叉树结点的行
+    注意点：
+        在while循环结束后还需要判断result中是否还存在元素
     知识点：
         1. 宽度优先搜索在将结点加入队列之前，要判断结点是不是null
+        2. 队列使用LinkedList来创建,队列插入删除操作的方法为add和remove
+        3. ArrayList复制方法 (ArrayList<Integer>) result.clone()，必须要复制之后再添加，否则只是拷贝引用
  */
 public class Offer060 {
 
@@ -30,7 +34,7 @@ public class Offer060 {
         Queue<TreeNode> queue = new LinkedList<>();
         ArrayList<Integer> result = new ArrayList<>();
         queue.add(pRoot);
-        int i = treeDepth(pRoot); // 表明第几层
+        int i = treeDepth(pRoot); // 节点的深度
         while (!queue.isEmpty()) {
             TreeNode temp = queue.remove();
             int deep = treeDepth(temp);

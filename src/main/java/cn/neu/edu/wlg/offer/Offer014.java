@@ -5,8 +5,10 @@ import cn.neu.edu.wlg.offer.util.ListNode;
 /*
     题目：链表中倒数第k个结点
     思路：
-        两个指针，一个指针先走k-1步，另一个指针再走，第一个指针指到最后一个节点时，第二个指针指向结果
-        1 2 3 4 5
+        倒数第k个数与倒数第一个数之间相差k-1步，所以让两个指针走，
+        一个指针先走k-1步，另一个指针再同时走，那么第一个指针走到最后一个节点时，第二个指针就指向倒数第k个数
+        如果第一个指针走的过程中发现没有k个节点(.next == null)，则直接返回null
+
  */
 public class Offer014 {
 
@@ -27,8 +29,5 @@ public class Offer014 {
             list2 = list2.next;
         }
         return list2;
-//        ListNode listNode = list2;
-//        listNode.next = null;
-//        return listNode;
     }
 }
