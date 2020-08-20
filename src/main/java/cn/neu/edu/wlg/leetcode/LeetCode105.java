@@ -1,6 +1,6 @@
 package cn.neu.edu.wlg.leetcode;
 
-import cn.neu.edu.wlg.offer.util.TreeNode;
+import cn.neu.edu.wlg.ZJoffer.util.TreeNode;
 
 /*
     题目：从前序和中序遍历序列构造二叉树
