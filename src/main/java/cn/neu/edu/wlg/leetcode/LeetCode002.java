@@ -1,5 +1,7 @@
 package cn.neu.edu.wlg.leetcode;
 
+import cn.neu.edu.wlg.leetcode.util.ListNode;
+
 /*
     1.正序和逆序单链表的建立
         正序中需不断向前移动head指针，逆序中head指针不动而不断移动move指针向后添加节点
@@ -35,15 +37,6 @@ public class LeetCode002 {
         singleLinkedList3.display();
     }
 }
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
-        val = x;
-    }
-}
-
 
 class SingleLinkedList {
 

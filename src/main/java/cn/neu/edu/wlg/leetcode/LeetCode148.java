@@ -1,5 +1,7 @@
 package cn.neu.edu.wlg.leetcode;
 
+import cn.neu.edu.wlg.leetcode.util.ListNode;
+
 /*
     题目：排序链表
     思路：归并排序

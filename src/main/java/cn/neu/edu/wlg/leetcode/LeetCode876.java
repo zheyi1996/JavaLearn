@@ -1,5 +1,7 @@
 package cn.neu.edu.wlg.leetcode;
 
+import cn.neu.edu.wlg.leetcode.util.ListNode;
+
 /*
     题目：链表的中间结点
     思路：
