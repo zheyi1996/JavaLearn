@@ -4,6 +4,7 @@ package cn.neu.edu.wlg.base.hashMap;
 import sun.util.PreHashedMap;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MyHashMap<K, V> implements MyMap<K, V> {
@@ -12,7 +13,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     private static final int DEFAULT_INITIAL_CAPACITY = 1 << 4;
     // 默认负载因子
     private static final float DEFAULT_LOAD_FACTOR = 0.75f;
-    // 可设置的初始化值
+    // 可设置数组大小
     private int size;
     // 可设置的负载因子
     private float loadFactor;
@@ -100,9 +101,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                 entry = entry.next;
             }
         }
-        if (newTable.length > 0) {
-            table = newTable;
-        }
+        table = newTable;
         // 重新散列，即将元素重新放入到扩容后的集合中
         for (Entry<K, V> entry : entryList) {
             put(entry.getKey(), entry.getValue());
@@ -118,7 +117,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     class Entry<K, V> implements MyMap.Entry<K, V> {
 
         private K key;
-        private volatile V value;
+        private V value;
         private Entry<K, V> next;
 
         public Entry() {
