@@ -10,6 +10,7 @@ public class MyHashMapTest {
 
         for (int i = 0; i < 100; i++) {
             map.put("key" + i, "value" + i);
+            map.put("key" + i, "value" + (i + 100));
         }
 
         for (int i = 0; i < 100; i++) {

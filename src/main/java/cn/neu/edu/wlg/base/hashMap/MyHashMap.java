@@ -1,10 +1,6 @@
 package cn.neu.edu.wlg.base.hashMap;
 
-
-import sun.util.PreHashedMap;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MyHashMap<K, V> implements MyMap<K, V> {
@@ -18,7 +14,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     // 可设置的负载因子
     private float loadFactor;
     // 当前已存入的元素的数量
-    private int entryUseSize;
+    private int entryUsedSize;
     // 存放<K, V>键值对对象的数组
     private Entry<K, V>[] table = null;
 
@@ -38,18 +34,18 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         int index = hash(k) & (size - 1);
         if (null == table[index]) {
             table[index] = new Entry<>(k, v, null);
-            ++entryUseSize;
+            ++entryUsedSize;
         } else {
             // 是否需要扩容
             // 1. HashMap存放的数据量大于阈值 2. 发生冲突
-            if (entryUseSize >= size * loadFactor) {
+            if (entryUsedSize >= size * loadFactor) {
                 resize(2 * size);
+                index = hash(k) & (size - 1);
             }
-
             Entry<K, V> entry = table[index];
             Entry<K, V> e = entry;
             while(null != e) {
-                if(k == e.getKey() || k.equals(e.getKey())) {
+                if(k.equals(e.getKey())) {
                     oldValue = e.getValue();
                     // key已经存在，直接更新value
                     e.value = v;
@@ -59,7 +55,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
             }
             // JDK1.7中链表头插法，直接占据数组下标位置
             table[index] = new Entry<>(k, v, entry);
-            ++entryUseSize;
+            ++entryUsedSize;
         }
         return oldValue;
     }
@@ -88,7 +84,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         Entry<K, V>[] newTable = new Entry[size];
         // 改变数组的大小
         this.size = size;
-        entryUseSize = 0;
+        entryUsedSize = 0;
         rehash(newTable);
     }
 
