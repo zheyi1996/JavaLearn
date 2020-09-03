@@ -1,10 +1,18 @@
 package cn.neu.edu.wlg.test;
 
 
-public class Add {
+import org.junit.Test;
 
-    public int add(int para1, int para2) {
-        return para1 + para2;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Add extends Thread {
+
+    public void run() {
+        System.out.println("run");
+    }
+    public static void main(String[] args) {
+        (new Add()).start();
     }
 
 }
