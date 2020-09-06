@@ -11,6 +11,15 @@ import java.util.Stack;
         1. String不可变，可变字符串用StringBuilder和StringBUffer
         2. 字符串遍历用String.charAt(i)
         3. StringBuffer清空用StringBuffer.setLength(0)
+        4. StringBuffer方法：
+            public StringBuffer(String str)
+            reverse()
+            toString()
+            charAt()
+            append() boolean,int,long,float,double,String,StringBuffer
+            setLength()
+        5. String方法
+            length()
  */
 public class Offer044 {
 
