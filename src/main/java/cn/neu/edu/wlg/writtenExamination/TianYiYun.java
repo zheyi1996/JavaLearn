@@ -1,23 +1,17 @@
 package cn.neu.edu.wlg.writtenExamination;
 
+import java.util.Scanner;
+
 public class TianYiYun {
 
     public static void main(String[] args) {
-//        int[] arr = {1, 2, 4, 1, 7, 8, 3};
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(dp_opt(arr));
-    }
-
-    public static int rec_opt(int[] arr, int i) {
-        if (i == 0)
-            return arr[0];
-        else if (i == 1)
-            return Math.max(arr[0], arr[1]);
-        else {
-            int a = rec_opt(arr, i - 2) + arr[i];
-            int b = rec_opt(arr, i - 1);
-            return Math.max(a, b);
+        Scanner scanner = new Scanner(System.in);
+        String[] str = scanner.nextLine().split(",");
+        int[] arr = new int[str.length];
+        for(int i = 0; i < str.length; ++i) {
+            arr[i] = Integer.parseInt(str[i]);
         }
+        System.out.println(dp_opt(arr));
     }
 
     public static int dp_opt(int[] arr) {
