@@ -12,25 +12,23 @@ public class Xiaomi002 {
         static  private char[][] board;
 
         public static void main(String[] args) {
-
             char[][] board = {
                         {'A', 'B', 'C', 'E'},
                         {'S', 'F', 'C', 'S'},
                         {'A', 'D', 'E', 'E'}
                 };
-
             Scanner scanner = new Scanner(System.in);
-
             String word = scanner.nextLine();
+            System.out.println(word);
             boolean has = has(board, word);
             System.out.println(has);
         }
         public static boolean has(char[][] boards, String words) {
-            m = board.length;
+            m = boards.length;
             if (m == 0) {
                 return false;
             }
-            n = board[0].length;
+            n = boards[0].length;
             marked = new boolean[m][n];
             word = words;
             board = boards;

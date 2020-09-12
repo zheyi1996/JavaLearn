@@ -11,7 +11,6 @@ class Solution {
                 {'S', 'F', 'C', 'S'},
                 {'A', 'D', 'E', 'E'}
         };
-
         Scanner scanner = new Scanner(System.in);
 
         String word = scanner.nextLine();
@@ -20,6 +19,9 @@ class Solution {
     }
     public static boolean has(char[][] board, String word) {
         if(board == null || board.length == 0 || board[0].length == 0 ) {
+            return false;
+        }
+        if(word.length() == 0 || null == word) {
             return false;
         }
         for(int i = 0; i < board.length; i++) {

@@ -8,7 +8,7 @@ import java.util.Stack;
         思路一：先翻转所有字符的顺序，再翻转每个单词中字符的顺序
         思路二：用栈存放每个单词
     知识点：
-        1. String不可变，可变字符串用StringBuilder和StringBUffer
+        1. String不可变，可变字符串用StringBuilder和StringBuffer
         2. 字符串遍历用String.charAt(i)
         3. StringBuffer清空用StringBuffer.setLength(0)
         4. StringBuffer方法：
