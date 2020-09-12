@@ -1,7 +1,23 @@
 package cn.neu.edu.wlg.writtenExamination;
 
+import java.util.Scanner;
 public class HaoWeiLai001 {
-    public void reOrderArray(int [] array) {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] strs = scanner.nextLine().trim().split(",");
+        int[] arr = new int[strs.length];
+        int i = 0;
+        for(String str : strs) {
+            arr[i++] = Integer.parseInt(str);
+        }
+        reOrderArray1(arr);
+        System.out.print("{");
+        for(int j = 0; j < arr.length - 1; ++j) {
+            System.out.print(arr[j] + ",");
+        }
+        System.out.println(arr[arr.length - 1] + "}");
+    }
+    public static void reOrderArray1(int[] array) {
         if (null == array || 0 == array.length) {
             return;
         }
