@@ -1,17 +1,15 @@
-//package cn.neu.edu.wlg.test;
-//
-//
-//import org.junit.Test;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class Add {
-//    static int a = 1;
-//    static int b = 2;
-//    public static void main(String[] args) {
-//        static String c = "3";
-//        System.out.println(a + b + c);
-//    }
-//    Math.
-//}
+
+//public int[] sortArrayByParity(int[] A) {
+//        int oddIdx = A.length - 1, evenIdx = 0;
+//        while(evenIdx < oddIdx) {
+//        if(A[evenIdx] % 2 != 0) {
+//        int t = A[evenIdx];
+//        A[evenIdx] = A[oddIdx];
+//        A[oddIdx--] = t;
+//        }
+//        else {
+//        evenIdx++;
+//        }
+//        }
+//        return A;
+//        }

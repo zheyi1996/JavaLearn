@@ -23,4 +23,5 @@ public class HaoWeiLai001 {
             array[i] = temp[i];
         }
     }
+
 }
