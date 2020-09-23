@@ -1,38 +1,34 @@
+//package cn.neu.edu.wlg.test;
+//
 //import java.util.Arrays;
 //
-//public class Main {
-//    public static void main(String[] args){
-//
-//        System.out.println(findTheLongestSubstring("amabc"));
-//    }
-//    public static int findTheLongestSubstring(String s) {
-//        int n = s.length();
-//        int[] pos = new int[1 << 6];
-//        Arrays.fill(pos, -1);
-//        int ans = 0, status = 0;
-//        pos[0] = 0;
-//        for (int i = 0; i < n; i++) {
-//            char ch = s.charAt(i);
-//            if (ch == 'a') {
-//                status ^= (1 << 0);
-//            } else if (ch == 'b') {
-//                status ^= (1 << 1);
-//            } else if (ch == 'c') {
-//                status ^= (1 << 2);
-//            } else if (ch == 'x') {
-//                status ^= (1 << 3);
-//            } else if (ch == 'y') {
-//                status ^= (1 << 4);
-//            }else if (ch == 'z') {
-//                status ^= (1 << 5);
-//            }
-//            if (pos[status] >= 0) {
-//                ans = Math.max(ans, i + 1 - pos[status]);
-//            } else {
-//                pos[status] = i + 1;
-//            }
+//public class Add {
+//    public static void main(String[] args) {
+//        if (null == pHead1 || null == pHead2) {
+//            return null;
 //        }
-//        return ans;
+//        int leng1 = 0;
+//        int leng2 = 0;
+//        Node temp1 = pHead1;
+//        Node temp2 = pHead2;
+//        while (null != temp1) {
+//            ++leng1;
+//            temp1 = temp1.next;
+//        }
+//        while (null != temp2) {
+//            ++leng2;
+//            temp2 = temp2.next;
+//        }
+//        int leng = Math.abs(leng1 - leng2);
+//        Node longerHead = leng1 >= leng2 ? pHead1 : pHead2;
+//        Node shorterHead = leng1 < leng2 ? pHead1 : pHead2;
+//        for (int i = 0; i < leng; ++i) {
+//            longerHead = longerHead.next;
+//        }
+//        while (longerHead != shorterHead) {
+//            longerHead = longerHead.next;
+//            shorterHead = shorterHead.next;
+//        }
+//        return shorterHead;
 //    }
-//
 //}

@@ -1,5 +1,9 @@
 package cn.neu.edu.wlg.base.baseUsing;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+
 //import org.junit.Test;
 /*
 总结：
@@ -10,22 +14,17 @@ package cn.neu.edu.wlg.base.baseUsing;
  */
 public class StringBuffer_StringBuilder {
 
-//    @Test
-    public void testStringBuilder() {
-        StringBuilder stringBuilder = new StringBuilder("菜鸟教程官网：");
-        stringBuilder.append("www");
-        stringBuilder.append(".runoob");
-        stringBuilder.append(".com");
-        System.out.println(stringBuilder);
+    public static void main(String[] args) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        Integer[] arr = {2, 3 , 5, 4};
+        Arrays.sort(arr, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+        for(int i = 0; i < arr.length; ++i) {
+            System.out.println(arr[i]);
+        }
     }
-
-//    @Test
-    public void testStringBuffer() {
-        StringBuffer stringBuffer = new StringBuffer("菜鸟教程官网：");
-        stringBuffer.append("www");
-        stringBuffer.append(".runoob");
-        stringBuffer.append(".com");
-        System.out.println(stringBuffer);
-    }
-
 }
